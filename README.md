@@ -22,8 +22,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-Clone the repository to your local machine
-(git@github.com:Aduda-Boaz/bookstore-cms.git)
+[Clone the repository to your local machine](git@github.com:Aduda-Boaz/bookstore-cms.git)
 
 ### Install
 
