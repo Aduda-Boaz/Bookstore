@@ -8,7 +8,7 @@ const reducer = combineReducers({
   booksReducer,
 });
 
-const store = createStore (
+const store = createStore(
   reducer, 
   composeWithDevTools(applyMiddleware(thunk, logger)),
 );
