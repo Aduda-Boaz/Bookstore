@@ -1,29 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { addBookToAPI } from '../redux/books/books';
 
-function BookForm() {
+const categories = ['Action', 'Science Fiction', 'Economy'];
+
+const BookForm = () => {
+  const dispatch = useDispatch();
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
+
+  const submitBookToStore = (e) => {
+    e.preventDefault();
+    if (title && category && author) {
+      const newBook = {
+        item_id: uuidv4(),
+        title: {
+          title,
+          author,
+        },
+        category,
+      };
+      dispatch(addBookToAPI(newBook));
+      setTitle('');
+      setAuthor('');
+      setCategory('');
+    }
+  };
   return (
-    <div>
-      <form className="add-new">
-        <h4>Add new book</h4>
-        <label htmlFor="Title">
-          <input id="Title" placeholder="Title" required />
-        </label>
-        <label htmlFor="author">
-          <input id="author" placeholder="Author" />
-        </label>
-        <label htmlFor="genre">
-          <select className="book-selection" id="genre" required>
-            <option value="Unknown">Genre</option>
-            <option value="Leadership">Leadership</option>
-            <option value="Science-Fiction">Science-Fiction</option>
-            <option value="Business">Business</option>
-            <option value="Romance">Romance</option>
-          </select>
-        </label>
-        <button type="submit" className="add-book">Add</button>
+    <div className="create-book">
+      <h2 className="add-book">Add new Book</h2>
+      <form
+        className="form"
+        onSubmit={submitBookToStore}
+      >
+        <input
+          className="input"
+          type="text"
+          placeholder="Book title"
+          name="title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <input
+          type="text"
+          className="input"
+          placeholder="Book author"
+          name="author"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        />
+        <select className="select" placeholder="Category" name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="" disabled>Choose Category</option>
+          {categories.sort().map((categ) => (
+            <option key={uuidv4()} value={categ}>
+              {categ}
+            </option>
+          ))}
+        </select>
+        <input type="submit" className="submit active" value="Add Book" />
       </form>
     </div>
   );
-}
+};
 
 export default BookForm;
