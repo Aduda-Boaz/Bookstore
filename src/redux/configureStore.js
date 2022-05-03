@@ -9,7 +9,7 @@ const reducer = combineReducers({
 });
 
 const store = createStore(
-  reducer, 
+  reducer,
   composeWithDevTools(applyMiddleware(thunk, logger)),
 );
 store.dispatch(fetchBooks());
