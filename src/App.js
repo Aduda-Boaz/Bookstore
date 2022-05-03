@@ -4,15 +4,19 @@ import './App.css';
 import BookDisplay from './components/Display';
 import Nav from './components/NavBar';
 import BookCategories from './components/Category';
+import { Provider } from 'react-redux';
+import store from './redux/configureStore';
 
 function App() {
   return (
     <>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<BookDisplay />} />
-        <Route path="categories" element={<BookCategories />} />
-      </Routes>
+      <Provider store={store}>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<BookDisplay />} />
+          <Route path="categories" element={<BookCategories />} />
+        </Routes>
+      </Provider>
     </>
   );
 }
