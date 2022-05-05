@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBookToAPI } from '../redux/books/books';
 
-const categories = ['Action', 'Science Fiction', 'Economy'];
+const categories = ['Action', 'Fiction', 'Romance', 'Politics', 'Science'];
 
 const BookForm = () => {
   const dispatch = useDispatch();
