@@ -37,8 +37,8 @@ export const fetchBooks = () => async (dispatch) => {
   const books = Object.entries(bookData).map(([key, value]) => ({
     item_id: key,
     title: {
-      title: value[0].title.title,
-      author: value[0].title.author,
+      title: value[0].title,
+      author: value[0].author,
     },
     category: value[0].category,
   }));
