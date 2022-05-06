@@ -40,10 +40,10 @@ const BookList = ({
 };
 
 BookList.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
-  author: PropTypes.string,
-  category: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default BookList;
