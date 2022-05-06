@@ -5,16 +5,16 @@ import { removeBook } from '../redux/books/books';
 import 'react-circular-progressbar/dist/styles.css';
 
 const BookList = ({
-  category, title, author,
+  category, title, author, id,
 }) => {
   const dispatch = useDispatch();
   const percentage = 70;
   return (
     <li>
       <div>
-        <h3 className="category">{category}</h3>
         <h2 className="title">{title}</h2>
         <span className="author">{author}</span>
+        <h3 className="category">{category}</h3>
         <button type="button" className="button">Comments</button>
         <button type="button" className="button active" onClick={() => { dispatch(removeBook(id)); }}>Remove</button>
         <button type="button" className="button">Edit</button>
@@ -40,10 +40,10 @@ const BookList = ({
 };
 
 BookList.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  category: PropTypes.string,
 };
 
 export default BookList;
