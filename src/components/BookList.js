@@ -5,7 +5,7 @@ import { removeBook } from '../redux/books/books';
 import 'react-circular-progressbar/dist/styles.css';
 
 const BookList = ({
-  category, title, id,
+  category, title, author,
 }) => {
   const dispatch = useDispatch();
   const percentage = 70;
