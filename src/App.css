@@ -5,36 +5,14 @@
   margin: 0;
 }
 
-/* .Navbar {
+.Navbar {
   display: flex;
-  flex-direction: row;
-  top: 5rem;
-  background-color: #fff;
-  border-bottom: 1px solid #d8d8d8;
-} */
-
-.Nav-header {
-  display: flex;
-  width: 100vw;
-  background-color: #fff;
-}
-
-.Nav-header ul {
-  display: flex;
-  gap: 0.968rem;
-  margin: 2rem;
-  color: #121212;
-  font-size: 0.8rem;
-  text-transform: uppercase;
   align-items: center;
-  list-style-type: none;
-}
-
-.Nav-logo {
-  margin: 2rem;
-  font-size: 1.875rem;
-  font-weight: bold;
-  color: var(--azure);
+  justify-content: flex-start;
+  width: 100vw;
+  gap: 2.563rem;
+  height: 5.938rem;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 a {
