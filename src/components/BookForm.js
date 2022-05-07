@@ -50,7 +50,7 @@ const BookForm = () => {
           onChange={(e) => setAuthor(e.target.value)}
         />
         <select className="select" placeholder="Category" name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="" disabled>Choose Category</option>
+          <option value="" disabled>Category</option>
           {categories.sort().map((categ) => (
             <option key={uuidv4()} value={categ}>
               {categ}
