@@ -16,10 +16,8 @@ const BookForm = () => {
     if (title && category && author) {
       const newBook = {
         item_id: uuidv4(),
-        title: {
-          title,
-          author,
-        },
+        title,
+        author,
         category,
       };
       dispatch(addBookToAPI(newBook));
